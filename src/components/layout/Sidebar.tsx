@@ -1,33 +1,29 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import {
-  Database,
-  Settings,
-  BarChart2
-} from 'lucide-react';
+import { Database, Settings, BarChart2, HelpCircle } from 'lucide-react';
 import { Tooltip } from '../ui/tooltip';
 
 const navigation = [
-  { 
-    name: 'Model Inventory', 
-    href: '/', 
+  {
+    name: 'Model Inventory',
+    href: '/',
     icon: Database,
     description: 'View and manage model metadata',
-    tooltip: 'Centralized repository for all ML models, including metadata, risk assessments, and deployment information'
+    tooltip: 'Centralized repository for all ML models'
   },
-  { 
-    name: 'Data Quality', 
-    href: '/data-quality', 
+  {
+    name: 'Data Quality',
+    href: '/data-quality',
     icon: BarChart2,
-    description: 'Monitor and manage data quality metrics',
-    tooltip: 'Track and analyze data quality metrics, anomaly detection results, and data validation checks'
+    description: 'Monitor data quality metrics',
+    tooltip: 'Track and analyze data quality metrics'
   },
-  { 
-    name: 'Admin Settings', 
-    href: '/admin', 
+  {
+    name: 'Admin Settings',
+    href: '/admin',
     icon: Settings,
-    description: 'System configuration and user management',
-    tooltip: 'Manage system configurations, user permissions, and global settings for the platform'
+    description: 'System configuration',
+    tooltip: 'Manage system settings and configurations'
   }
 ];
 
@@ -62,6 +58,19 @@ export function Sidebar() {
             );
           })}
         </nav>
+
+        {/* Help Section */}
+        <div className="mt-8 px-3">
+          <div className="p-4 rounded-lg bg-accent/5 border border-accent/10">
+            <div className="flex items-center mb-2">
+              <HelpCircle className="h-5 w-5 text-accent mr-2" />
+              <h3 className="font-medium text-primary-900">Need Help?</h3>
+            </div>
+            <p className="text-sm text-primary-600">
+              Check our documentation or contact support for assistance.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
